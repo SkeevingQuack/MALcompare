@@ -5,15 +5,20 @@
     
     <title>MALcompare</title>
 
+    <link href="style.css" rel="stylesheet">
     <script src="malapi.js"></script>
   </head>
   <body>
     <form id="mainForm">
-      <div class="inputPair">
-	<label for="name">MAL username:</label>
-	<input type="text" id="name" name="malName">
-      </div>
-      <button type="button" onclick="getUserList()">send</button>
+      <select name="comparisonType">
+	<option value="show" selected>Anime</option>
+	<option value="person">Person</option>
+      </select>
+      <span>:</span>
+      <input type="text" id="comparisonId" name="comparisonId">
+      <label for="user">MAL username:</label>
+      <input type="text" id="user" name="malName">
+      <button type="button" onclick="getUserList()">Compare</button>
     </form>
 
     <div id="userList"></div>
