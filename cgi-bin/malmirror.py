@@ -27,12 +27,7 @@ request = base_url + '?' + queries
 
 with urllib.request.urlopen(request) as response:
 #    print(response.read().decode('utf-8', errors='replace'))
-    import xml.etree.ElementTree as ET
-    root = ET.fromstring(response.read().decode('utf-8'))
-    with open("list.xml", 'w') as f:
-        print("<root>")
-        try:
-            print(f.write(ET.tostring(root, encoding="unicode")))
-        except Exception as e:
-            print(e)
-        print("</root>")
+    with open("list.xml", 'wb') as f:
+        f.write(response.read())
+
+print("<root></root>")
