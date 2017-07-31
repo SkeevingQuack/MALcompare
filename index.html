@@ -1,10 +1,21 @@
 <!DOCTYPE HTML>
 <html>
   <head>
+    <meta charset="utf-8">
+    
     <title>MALcompare</title>
 
+    <script src="malapi.js"></script>
   </head>
   <body>
-    <p>malcompare test</p>
+    <form id="mainForm">
+      <div class="inputPair">
+	<label for="name">MAL username:</label>
+	<input type="text" id="name" name="malName">
+      </div>
+      <input type="submit" onclick="return getUserList()" value="Send">
+    </form>
+
+    <div id="userList"></div>
   </body>
 </html>
