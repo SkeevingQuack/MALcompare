@@ -1,4 +1,4 @@
-funciton getUserList() {
+function getUserList() {
     var malName = document.forms["mainForm"]["malName"].value;
 
     // var xhr = new XMLHttpRequest();
