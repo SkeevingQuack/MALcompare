@@ -7,27 +7,20 @@ import cgi
 import urllib.request
 
 ###### HTTP headers
-#print("Content-Type: application/xml; charset=UTF-8")
-print("Content-Type: text/html")
+print("Content-Type: application/xml; charset=UTF-8")
+#print("Content-Type: text/html")
 print("access-control-allow-origin: *")
 
 print()
 
 ###### XML proxy
-#form = cgi.FieldStorage()
-#form = {'u':'test', 'status':'some', 'type':'clacks'}
-form = {'u':'SkeevingQuack', 'status':'all', 'type':'anime'}
+form = cgi.FieldStorage()
 
-querymap = map(lambda key:key+'='+form[key], form.keys())
+querymap = map(lambda mini:"{}={}".format(mini.name, mini.value), form.list)
 queries = '&'.join(querymap)
 
 base_url = "http://myanimelist.net/malappinfo.php"
-
 request = base_url + '?' + queries
 
 with urllib.request.urlopen(request) as response:
-#    print(response.read().decode('utf-8', errors='replace'))
-    with open("list.xml", 'wb') as f:
-        f.write(response.read())
-
-print("<root></root>")
+   print(response.read().decode('utf-8'))
