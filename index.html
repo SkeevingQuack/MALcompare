@@ -13,7 +13,7 @@
 	<label for="name">MAL username:</label>
 	<input type="text" id="name" name="malName">
       </div>
-      <input type="submit" onclick="return getUserList()" value="Send">
+      <input type="submit" onclick="getUserList(); return false" value="Send">
     </form>
 
     <div id="userList"></div>
