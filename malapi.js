@@ -12,7 +12,3 @@ function getUserList() {
 
     return false;
 }
-
-function test() {
-    alert('sdfojsdf');
-}

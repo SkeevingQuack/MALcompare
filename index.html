@@ -5,26 +5,7 @@
     
     <title>MALcompare</title>
 
-    <script>
-      function getUserList() {
-      var malName = document.forms["mainForm"]["malName"].value;
-
-      // var xhr = new XMLHttpRequest();
-      // var requestUrl = "http://myanimelist.net/malappinfo.php?u=" + malName + "&status=all&type=anime";
-      // xhr.open("GET", requestURL, false);
-      // xhr.send();
-      
-      var userListDisplay = document.getElementById("userList");
-      //   userListDisplay.innerHTML = xhr.responseText;
-      userListDisplay.innerHTML = malName;
-      
-      return false;
-      }
-      
-      function test() {
-      alert('sdfojsdf');
-      }
-    </script>
+    <script src="malapi.js"></script>
   </head>
   <body>
     <form id="mainForm">
@@ -32,7 +13,7 @@
 	<label for="name">MAL username:</label>
 	<input type="text" id="name" name="malName">
       </div>
-      <button type="button" onclick="test()">send</button>
+      <button type="button" onclick="getUserList()">send</button>
     </form>
 
     <div id="userList"></div>
