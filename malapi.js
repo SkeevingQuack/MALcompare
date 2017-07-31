@@ -9,4 +9,6 @@ function getUserList() {
     var userListDisplay = document.getElementById("userList");
     //   userListDisplay.innerHTML = xhr.responseText;
     userListDisplay.innerHTML = malName;
+
+    return false;
 }
